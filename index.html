@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mozart Barbershop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #eee;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #222;
+        }
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        nav a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #0077cc;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-bottom: 2px solid #0077cc;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            color: #0077cc;
+        }
+        .about p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .team-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .team-member {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            width: 180px;
+            text-align: center;
+            padding: 15px;
+        }
+        .team-member img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .team-member h3 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+            color: #222;
+        }
+        .team-member p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        button {
+            background: #0077cc;
+            border: none;
+            padding: 12px 20px;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #005fa3;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #eee;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mozart Barbershop</h1>
+    </header>
+    <nav>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#team">Equipe</a>
+        <a href="#booking">Agendamento</a>
+    </nav>
+    <main>
+        <section id="about" class="about">
+            <h2>Sobre a Mozart Barbershop</h2>
+            <p>Bem-vindo à Mozart Barbershop, onde tradição e estilo se encontram para oferecer o melhor cuidado masculino. Um ambiente claro, moderno e acolhedor para você se sentir em casa.</p>
+        </section>
+        <section id="services">
+            <h2>Serviços</h2>
+            <ul>
+                <li>Corte de cabelo clássico e moderno</li>
+                <li>Barba com design personalizado</li>
+                <li>Tratamentos capilares</li>
+                <li>Coloração masculina</li>
+            </ul>
+        </section>
+        <section id="team">
+            <h2>Conheça a Equipe</h2>
+            <div class="team-list">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/180x180?text=Barbeiro+1" alt="Barbeiro 1" />
+                    <h3>João Silva</h3>
+                    <p>Especialista em cortes clássicos</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/180x180?text=Barbeiro+2" alt="Barbeiro 2" />
+                    <h3>Maria Santos</h3>
+                    <p>Barbeira e designer de barba</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/180x180?text=Barbeiro+3" alt="Barbeiro 3" />
+                    <h3>Carlos Pereira</h3>
+                    <p>Especialista em tratamentos capilares</p>
+                </div>
+            </div>
+        </section>
+        <section id="booking">
+            <h2>Agendamento</h2>
+            <form id="booking-form">
+                <label for="name">Nome completo:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="barber">Escolha o barbeiro:</label>
+                <select id="barber" name="barber" required>
+                    <option value="">-- Selecionar --</option>
+                    <option value="joao">João Silva</option>
+                    <option value="maria">Maria Santos</option>
+                    <option value="carlos">Carlos Pereira</option>
+                </select>
+
+                <label for="date">Data do agendamento:</label>
+                <input type="date" id="date" name="date" required />
+
+                <label for="time">Horário:</label>
+                <select id="time" name="time" required>
+                    <option value="">-- Selecionar --</option>
+                    <option value="9:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                </select>
+
+                <button type="submit">Agendar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        © 2025 Mozart Barbershop. Todos os direitos reservados.
+    </footer>
+    <script>
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Agendamento recebido! Entraremos em contato em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
