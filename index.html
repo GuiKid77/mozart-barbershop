@@ -1,309 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mozart Barbershop</title>
-<meta name="description" content="Mozart Barbershop: barbearia moderna e acolhedora, oferecendo cortes clássicos, barba personalizada e agendamento fácil com barbeiros especializados." />
-<style>
-  /* Reset básico */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
-    background: #f5f7fa;
-    color: #222;
-  }
-  header {
-    background: #34495e;
-    padding: 30px 20px;
-    text-align: center;
-    color: #f1f1f1;
-    font-weight: 700;
-    font-size: 2.8rem;
-    letter-spacing: 3px;
-  }
-  nav {
-    background: #2c3e50;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 15px 0;
-  }
-  nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.25s ease;
-    padding: 6px 12px;
-    border-radius: 4px;
-  }
-  nav a:hover {
-    background-color: #e67e22;
-    color: #fff;
-  }
-  main {
-    max-width: 960px;
-    margin: 40px auto 80px;
-    padding: 0 15px;
-  }
-  h2 {
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 8px;
-    margin-bottom: 25px;
-    color: #e67e22;
-    font-weight: 700;
-    font-size: 2rem;
-  }
-  /* Sobre */
-  #about p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 720px;
-    margin: 0 auto 50px auto;
-    color: #444;
-  }
-  /* Serviços */
-  #services ul {
-    max-width: 700px;
-    margin: 0 auto 60px auto;
-    padding-left: 1.3rem;
-    color: #555;
-    font-size: 1.15rem;
-    line-height: 1.5;
-  }
-  #services ul li {
-    margin-bottom: 12px;
-  }
-  /* Equipe */
-  .team-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 25px;
-    margin-bottom: 60px;
-  }
-  .team-member {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-  .team-member:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 18px rgb(0 0 0 / 0.15);
-  }
-  .team-member img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-  .team-member h3 {
-    margin: 12px 0 6px;
-    font-size: 1.3rem;
-    color: #2c3e50;
-  }
-  .team-member p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  /* Formulário */
-  form {
-    background: #fff;
-    padding: 30px 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 18px rgb(0 0 0 / 0.1);
-    max-width: 480px;
-    margin: 0 auto 60px auto;
-  }
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 700;
-    color: #34495e;
-  }
-  input[type="text"],
-  input[type="email"],
-  select,
-  input[type="date"] {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 22px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  select:focus,
-  input[type="date"]:focus {
-    border-color: #e67e22;
-    outline: none;
-  }
-  button {
-    background-color: #e67e22;
-    border: none;
-    padding: 14px 25px;
-    color: white;
-    font-size: 1.25rem;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 700;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  button:hover {
-    background-color: #cf711b;
-  }
-  /* Mensagem de confirmação */
-  #confirmation {
-    max-width: 480px;
-    margin: 30px auto 60px auto;
-    padding: 20px;
-    background: #dff0d8;
-    border: 2px solid #a3c293;
-    border-radius: 10px;
-    color: #3c763d;
-    font-weight: 700;
-    font-size: 1.1rem;
-    display: none;
-    text-align: center;
-  }
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    background: #34495e;
-    color: #f1f1f1;
-    font-size: 0.95rem;
-    letter-spacing: 0.7px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mozart Barbershop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?barbershop') center/cover no-repeat;
+      height: 400px;
+    }
+    .content {
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    .booking {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .booking h2 {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    select, input[type="date"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-<header>
-  Mozart Barbershop
-</header>
-<nav>
-  <a href="#about">Sobre</a>
-  <a href="#services">Serviços</a>
-  <a href="#team">Equipe</a>
-  <a href="#booking">Agendamento</a>
-</nav>
-<main>
-  <section id="about">
-    <h2>Sobre a Mozart Barbershop</h2>
-    <p>Bem-vindo à Mozart Barbershop, onde tradição e estilo se encontram para oferecer o melhor cuidado masculino. Um ambiente claro, moderno e acolhedor para você se sentir em casa.</p>
-  </section>
-  <section id="services">
-    <h2>Serviços</h2>
-    <ul>
-      <li>Corte de cabelo clássico e moderno</li>
-      <li>Barba com design personalizado</li>
-      <li>Tratamentos capilares</li>
-      <li>Coloração masculina</li>
-    </ul>
-  </section>
-  <section id="team">
-    <h2>Conheça a Equipe</h2>
-    <div class="team-list">
-      <div class="team-member">
-        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=crop&h=220&w=220" alt="Barbeiro João Silva" />
-        <h3>João Silva</h3>
-        <p>Especialista em cortes clássicos</p>
-      </div>
-      <div class="team-member">
-        <img src="https://images.unsplash.com/photo-1541592106381-0ef88d2a5d87?crop=entropy&cs=tinysrgb&fit=crop&h=220&w=220" alt="Barbeira Maria Santos" />
-        <h3>Maria Santos</h3>
-        <p>Barbeira e designer de barba</p>
-      </div>
-      <div class="team-member">
-        <img src="https://images.unsplash.com/photo-1556228724-f4b8017e16d4?crop=entropy&cs=tinysrgb&fit=crop&h=220&w=220" alt="Barbeiro Carlos Pereira" />
-        <h3>Carlos Pereira</h3>
-        <p>Especialista em tratamentos capilares</p>
-      </div>
-    </div>
-  </section>
-  <section id="booking">
-    <h2>Agendamento</h2>
-    <form id="booking-form" novalidate>
-      <label for="name">Nome completo:</label>
-      <input type="text" id="name" name="name" placeholder="Seu nome" required minlength="3" />
+  <header>
+    <h1>Mozart Barbershop</h1>
+    <p>Estilo, precisão e tradição</p>
+  </header>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
+  <div class="hero"></div>
 
+  <div class="content">
+    <section class="booking">
+      <h2>Agendar horário</h2>
       <label for="barber">Escolha o barbeiro:</label>
-      <select id="barber" name="barber" required>
-        <option value="">-- Selecione --</option>
-        <option value="joao">João Silva</option>
-        <option value="maria">Maria Santos</option>
-        <option value="carlos">Carlos Pereira</option>
+      <select id="barber">
+        <option>João</option>
+        <option>Bruno</option>
+        <option>Marco</option>
       </select>
 
-      <label for="date">Data do agendamento:</label>
-      <input type="date" id="date" name="date" required min="" />
+      <label for="date">Escolha o dia:</label>
+      <input type="date" id="date">
 
-      <label for="time">Horário:</label>
-      <select id="time" name="time" required>
-        <option value="">-- Selecione --</option>
+      <label for="time">Escolha o horário:</label>
+      <select id="time">
+        <option>09:00</option>
+        <option>09:30</option>
+        <option>10:00</option>
+        <option>10:30</option>
+        <option>11:00</option>
+        <option>11:30</option>
+        <option>12:00</option>
+        <option>12:30</option>
+        <option>13:00</option>
+        <option>13:30</option>
+        <option>14:00</option>
+        <option>14:30</option>
+        <option>15:00</option>
+        <option>15:30</option>
+        <option>16:00</option>
+        <option>16:30</option>
+        <option>17:00</option>
+        <option>17:30</option>
+        <option>18:00</option>
+        <option>18:30</option>
       </select>
 
-      <button type="submit">Agendar</button>
-    </form>
-    <div id="confirmation"></div>
-  </section>
-</main>
-<footer>
-  © 2025 Mozart Barbershop. Todos os direitos reservados.
-</footer>
+      <button onclick="alert('Agendamento confirmado!')">Confirmar</button>
+    </section>
+  </div>
 
-<script>
-  // Atualiza o min do campo data para hoje
-  const dateInput = document.getElementById('date');
-  const today = new Date().toISOString().split('T')[0];
-  dateInput.setAttribute('min', today);
-
-  // Preenche horários em 30min intervalos das 09:00 às 19:00
-  const timeSelect = document.getElementById('time');
-  function fillTimes() {
-    timeSelect.innerHTML = '<option value="">-- Selecione --</option>';
-    let startHour = 9;
-    let endHour = 19;
-    for (let h = startHour; h <= endHour; h++) {
-      ['00', '30'].forEach(min => {
-        if(h === endHour && min === '30') return; // não passa das 19:00
-        const timeString = `${h.toString().padStart(2,'0')}:${min}`;
-        const option = document.createElement('option');
-        option.value = timeString;
-        option.textContent = timeString;
-        timeSelect.appendChild(option);
-      });
-    }
-  }
-  fillTimes();
-
-  // Validação e envio
-  const form = document.getElementById('booking-form');
-  const confirmation = document.getElementById('confirmation');
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if(!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    // Podes aqui adicionar envio real via AJAX ou backend, por agora só confirma
-    confirmation.style.display = 'block';
-    confirmation.textContent = `Obrigado, ${form.name.value}! Seu agendamento com ${form.barber.options[form.barber.selectedIndex].text} para o dia ${form.date.value} às ${form.time.value} foi registrado. Entraremos em contato pelo email ${form.email.value}.`;
-    form.reset();
-  });
-</script>
+  <footer>
+    &copy; 2025 Mozart Barbershop. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
