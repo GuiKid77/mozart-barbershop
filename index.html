@@ -1,5 +1,3 @@
-Dito por si:
-CÓDIGO COMPLETO DO SITE MOZART BARBERSHOP
 
 === src/App.tsx ===
 import React, { useState } from 'react';
@@ -127,25 +125,25 @@ function App() {
             <nav className="hidden md:flex space-x-6">
               <button 
                 onClick={() => setActiveSection('home')}
-                className={hover:text-yellow-400 transition-colors ${activeSection === 'home' ? 'text-yellow-400' : ''}}
+                className={`hover:text-yellow-400 transition-colors ${activeSection === 'home' ? 'text-yellow-400' : ''}`}
               >
                 Início
               </button>
               <button 
                 onClick={() => setActiveSection('barbers')}
-                className={hover:text-yellow-400 transition-colors ${activeSection === 'barbers' ? 'text-yellow-400' : ''}}
+                className={`hover:text-yellow-400 transition-colors ${activeSection === 'barbers' ? 'text-yellow-400' : ''}`}
               >
                 Barbeiros
               </button>
               <button 
                 onClick={() => setActiveSection('services')}
-                className={hover:text-yellow-400 transition-colors ${activeSection === 'services' ? 'text-yellow-400' : ''}}
+                className={`hover:text-yellow-400 transition-colors ${activeSection === 'services' ? 'text-yellow-400' : ''}`}
               >
                 Serviços
               </button>
               <button 
                 onClick={() => setActiveSection('booking')}
-                className={hover:text-yellow-400 transition-colors ${activeSection === 'booking' ? 'text-yellow-400' : ''}}
+                className={`hover:text-yellow-400 transition-colors ${activeSection === 'booking' ? 'text-yellow-400' : ''}`}
               >
                 Agendar
               </button>
@@ -241,7 +239,7 @@ function App() {
                     <div className="flex items-center">
                       <div className="flex text-yellow-400">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={h-4 w-4 ${i < Math.floor(barber.rating) ? 'fill-current' : ''}} />
+                          <Star key={i} className={`h-4 w-4 ${i < Math.floor(barber.rating) ? 'fill-current' : ''}`} />
                         ))}
                       </div>
                       <span className="ml-2 text-gray-600">{barber.rating}</span>
@@ -344,13 +342,13 @@ function App() {
                           key={time}
                           onClick={() => setBookingData({...bookingData, time})}
                           disabled={!isTimeSlotAvailable(bookingData.date, time, bookingData.barberId)}
-                          className={p-2 rounded text-sm transition-colors ${
+                          className={`p-2 rounded text-sm transition-colors ${
                             bookingData.time === time 
                               ? 'bg-yellow-400 text-gray-900' 
                               : isTimeSlotAvailable(bookingData.date, time, bookingData.barberId)
                                 ? 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                          }}
+                          }`}
                         >
                           {time}
                         </button>
@@ -486,13 +484,13 @@ function App() {
                           key={time}
                           onClick={() => setBookingData({...bookingData, time})}
                           disabled={!isTimeSlotAvailable(bookingData.date, time, bookingData.barberId)}
-                          className={p-2 rounded text-sm transition-colors ${
+                          className={`p-2 rounded text-sm transition-colors ${
                             bookingData.time === time 
                               ? 'bg-yellow-400 text-gray-900' 
                               : isTimeSlotAvailable(bookingData.date, time, bookingData.barberId)
                                 ? 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                          }}
+                          }`}
                         >
                           {time}
                         </button>
@@ -767,32 +765,3 @@ export default tseslint.config(
     },
   }
 );
-
-=== INSTRUÇÕES DE INSTALAÇÃO ===
-
-1. Criar novo projeto:
-   npm create vite@latest mozart-barbershop -- --template react-ts
-
-2. Instalar dependências:
-   npm install
-   npm install lucide-react
-   npm install -D tailwindcss postcss autoprefixer
-   npx tailwindcss init -p
-
-3. Copiar todos os arquivos acima para seus respectivos locais
-
-4. Executar:
-   npm run dev
-
-=== FUNCIONALIDADES INCLUÍDAS ===
-
-✅ Sistema de agendamento completo
-✅ 4 barbeiros: João, Antonio, Rafael, Carlos
-✅ 7 tipos de serviços com preços em euros
-✅ Calendário de 30 dias
-✅ Horários das 09:00 às 18:30
-✅ Verificação de disponibilidade
-✅ Modal de agendamento rápido
-✅ Design responsivo
-✅ Navegação por seções
-✅ Footer com informações de contato 
